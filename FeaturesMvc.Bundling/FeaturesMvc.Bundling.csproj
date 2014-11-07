@@ -85,7 +85,14 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="FeaturesMvc.Bundling.nuspec" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FeaturesMvc\FeaturesMvc.csproj">
+      <Project>{cfb27a1f-4379-4a6c-a36b-1e5c477463db}</Project>
+      <Name>FeaturesMvc</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

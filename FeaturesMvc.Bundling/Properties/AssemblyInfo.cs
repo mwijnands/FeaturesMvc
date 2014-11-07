@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("XperiCode.FeaturesMvc.Bundling")]
-[assembly: AssemblyDescription("Enabling feature-based project structure for ASP.NET MVC.")]
+[assembly: AssemblyDescription("Enabling bundling support in feature-based project structure for ASP.NET MVC.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("XperiCode")]
 [assembly: AssemblyProduct("FeaturesMvc.Bundling")]
