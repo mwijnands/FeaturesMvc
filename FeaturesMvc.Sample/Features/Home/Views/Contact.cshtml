@@ -1,0 +1,24 @@
+﻿@model XperiCode.FeaturesMvc.Sample.Features.Home.Models.ContactViewModel
+
+@{
+    ViewBag.Title = "Contact";
+}
+
+<div id="contact-view">
+
+    <h2>@ViewBag.Title.</h2>
+    <h3>@ViewBag.Message</h3>
+
+    <address>
+        @Model.AddressLine1<br />
+        @Model.AddressLine2<br />
+        <abbr title="Phone">P:</abbr>
+        @Model.PhoneNumber
+    </address>
+
+    <div>
+        <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
+        <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
+    </div>
+
+</div>

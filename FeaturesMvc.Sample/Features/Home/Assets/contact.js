@@ -1,0 +1,1 @@
+﻿$('#contact-view address').fadeIn(1000);

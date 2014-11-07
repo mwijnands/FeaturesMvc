@@ -1,0 +1,7 @@
+﻿#contact-view {
+    color: midnightblue;
+}
+
+    #contact-view address {
+        display: none;
+    }
