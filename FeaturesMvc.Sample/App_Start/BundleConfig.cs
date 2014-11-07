@@ -21,14 +21,16 @@ namespace XperiCode.FeaturesMvc.Sample.App_Start
 
             var jsBundle = new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
-                      "~/Scripts/respond.js");
-            jsBundle.IncludeForFeatures(typeof(BundleConfig).Assembly, "~/Assets/*.js");
+                      "~/Scripts/respond.js")
+                      .IncludeForFeatures(typeof(BundleConfig).Assembly, 
+                      "~/Assets/*.js");
             bundles.Add(jsBundle);
 
             var cssBundle = new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css");
-            cssBundle.IncludeForFeatures(typeof(BundleConfig).Assembly, "~/Assets/*.css");
+                      "~/Content/site.css")
+                      .IncludeForFeatures(typeof(BundleConfig).Assembly, 
+                      "~/Assets/*.css");
             bundles.Add(cssBundle);
 
             // Set EnableOptimizations to false for debugging. For more information,

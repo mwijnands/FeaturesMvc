@@ -6,7 +6,7 @@ namespace XperiCode.FeaturesMvc.Bundling
 {
     internal class FeatureExtractor : IFeatureExtractor
     {
-        public IEnumerable<string> ExtractFeaturesFromControllerNamespaces(string[] controllerNamespaces, string areaName)
+        public IEnumerable<string> ExtractFeaturesFromAreaControllerNamespaces(string[] controllerNamespaces, string areaName)
         {
             foreach (var controllerNamespace in controllerNamespaces)
             {
