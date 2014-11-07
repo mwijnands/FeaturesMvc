@@ -16,11 +16,11 @@ The `FeaturesMvc` packages are available at [NuGet](https://www.nuget.org/packag
 
 If you want the full package that resolves views from features folders including bundling support, install `FeaturesMvc.Bundling` by running the following command in the [Package Manager Console](http://docs.nuget.org/docs/start-here/using-the-package-manager-console):
 
-> ### Install-Package XperiCode.FeaturesMvc.Bundling
+> #### Install-Package XperiCode.FeaturesMvc.Bundling
 
 If you only want views to be resolved from features folders, install `FeaturesMvc` by running the following command in the [Package Manager Console](http://docs.nuget.org/docs/start-here/using-the-package-manager-console):
 
-> ### Install-Package XperiCode.FeaturesMvc
+> #### Install-Package XperiCode.FeaturesMvc
 
 ## Documentation
 
