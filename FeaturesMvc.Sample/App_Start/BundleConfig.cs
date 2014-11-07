@@ -19,19 +19,15 @@ namespace XperiCode.FeaturesMvc.Sample.App_Start
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/modernizr-*"));
 
-            var jsBundle = new ScriptBundle("~/bundles/bootstrap").Include(
+            bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
-                      "~/Scripts/respond.js")
-                      .IncludeForFeatures(typeof(BundleConfig).Assembly, 
-                      "~/Assets/*.js");
-            bundles.Add(jsBundle);
+                      "~/Scripts/respond.js").IncludeForFeatures(
+                      "~/Assets/*.js"));
 
-            var cssBundle = new StyleBundle("~/Content/css").Include(
+            bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css")
-                      .IncludeForFeatures(typeof(BundleConfig).Assembly, 
-                      "~/Assets/*.css");
-            bundles.Add(cssBundle);
+                      "~/Content/site.css").IncludeForFeatures(
+                      "~/Assets/*.css"));
 
             // Set EnableOptimizations to false for debugging. For more information,
             // visit http://go.microsoft.com/fwlink/?LinkId=301862

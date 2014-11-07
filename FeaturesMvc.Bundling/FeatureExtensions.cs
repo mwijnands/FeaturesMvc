@@ -8,6 +8,18 @@ namespace XperiCode.FeaturesMvc.Bundling
 {
     public static class FeatureExtensions
     {
+        public static Bundle IncludeForFeatures(this Bundle bundle, params string[] virtualPaths)
+        {
+            var assembly = Assembly.GetCallingAssembly();
+            return bundle.IncludeForFeatures(assembly, virtualPaths);
+        }
+
+        public static Bundle IncludeForFeatures(this Bundle bundle, string virtualPath, params IItemTransform[] transforms)
+        {
+            var assembly = Assembly.GetCallingAssembly();
+            return bundle.IncludeForFeatures(assembly, virtualPath, new FeatureExtractor(), transforms);
+        }
+
         public static Bundle IncludeForFeatures(this Bundle bundle, Assembly assembly, params string[] virtualPaths)
         {
             foreach (var virtualPath in virtualPaths)
