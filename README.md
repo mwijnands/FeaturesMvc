@@ -24,4 +24,34 @@ If you only want views to be resolved from features folders, install `FeaturesMv
 
 ## Documentation
 
+To let ASP.NET MVC resolve views from within `~/Features/<FeatureName>/Views`, you have to add Features support to the Razor ViewEngine. `FeaturesMvc` includes an extension method to do just that. Execute the following code at application startup:
+
+```c#
+using XperiCode.FeaturesMvc;
+//...
+ViewEngines.Engines.AddFeatureSupportForRazorViewEngine();
+```
+
+Now you can add a Features folder to the root of your MVC Web Application, and start to add features. **Note that the name of a feature folder should be the same name as the name of the feature controller.**
+
+Because the root folder of your views is now `/Features` instead of `/Views`, your views will not find `_ViewStart.cshtml` anymore (if you are using it) and the `Web.config` from the `/Views` folder will not be used. **Therefore you will need to copy over the `_ViewStart.cshtml` and `Web.config` from the `/Views` folder to the `/Features` folder.**
+
+That is all that is necessary to get the basic functionality working.
+
+### Javascript and stylesheet
+
+If you also want your javascript files and stylesheets separated by feature, you'll need to make changes to the `Web.config` that is in the `/Features` folder. By default, there is a `BlockViewHandler` present that will prevent files from being downloaded from within the `/Views` folder. As you copied over that `Web.config` to the `/Features` folder, it is not possible to download javascript and stylesheets from the `/Features` folder either.
+
+So what we want to do, is only block views from being downloaded directly from the features folder, but allow any other files (like javscript and stylesheets). So change the handler from this:
+```xml
+<add name="BlockViewHandler" path="*" verb="*" preCondition="integratedMode" type="System.Web.HttpNotFoundHandler" />
+```
+To this:
+```xml
+<add name="BlockViewHandlerCS" path="*.cshtml" verb="*" preCondition="integratedMode" type="System.Web.HttpNotFoundHandler" />
+<add name="BlockViewHandlerVB" path="*.vbhtml" verb="*" preCondition="integratedMode" type="System.Web.HttpNotFoundHandler" />
+```
+
+### Bundling and minification
+
 Documentation is coming. In the meantime, check out the [sample project on GitHub](https://github.com/mwijnands/FeaturesMvc/tree/master/FeaturesMvc.Sample).
